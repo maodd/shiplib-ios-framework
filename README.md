@@ -211,7 +211,7 @@ The Sincerely Ship library will only run on devices running iOS 4.0 or later. If
 
 ## Pricing
 
-ShipLib for iOS developers - all payments are handled from within the ui flow. You won't need to collect payment from your users, set up SSL certificates, and we will pay you a percentage of the revenues based on what you charge your users. The base price is $0.99 for US-bound prints, and $1.99 for prints sent anywhere else. You will get 70% of the revenues of anything you charge above that; so if you choose to charge $2.99 us and $3.99 international, you'll make $1.40 per us card ($2.99 - $0.99 = $2.00 * 0.70). We pay by check or PayPal once your revenue hits $25.
+All payments are handled from within the ui flow. You won't need to collect payment from your users, set up SSL certificates, and we will pay you a percentage of the revenues based on what you charge your users. The base price is $0.99 for US-bound prints, and $1.99 for prints sent anywhere else. You will get 70% of the revenues of anything you charge above that; so if you choose to charge $2.99 us and $3.99 international, you'll make $1.40 per us card ($2.99 - $0.99 = $2.00 * 0.70). We pay by check or PayPal once your revenue hits $25.
 
 ## Support
 
