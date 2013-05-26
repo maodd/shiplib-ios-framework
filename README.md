@@ -27,13 +27,11 @@ Installing Sincerely.framework is a quick and easy process.
 
     ![Bundle Resources](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_3.png)
 
-5. Under the "Link Binary With Libraries" section, hit the plus button. Select both **AddressBook.framework** and **AddressBookUI.framework** and then hit the add button.
+5. Under the "Link Binary With Libraries" section, hit the plus button. Add: **AddressBook.framework**, **AddressBookUI.framework**, **SystemConfiguration.framework"**, and **CoreTelephony.framework**
 
     ![Other frameworks](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_4.png)
 
-6. Under the "Link Binary With Libraries" section, also add "CoreTelephony.framework" and "SystemConfiguration.framework".
-
-7. That's it. You are now ready to integrate!
+6. That's it. You are now ready to integrate!
 
 ## Integration
 
