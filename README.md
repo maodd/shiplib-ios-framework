@@ -211,6 +211,14 @@ The Sincerely Ship library will only run on devices running iOS 4.0 or later. If
     }
     ````
 
+## Troubleshooting
+
+1. **Sincerely/Sincerely.h file not found**:
+    - If you've recently upgraded and the path to Sincrely.framework changed, make sure that you completely removed the old framework. Sometimes Xcode will keep around directories inside the search paths of your project, which can cause this error.
+    - Make sure your `Framework Search Paths` includes the directory root where you placed the Sincerely.framework bundle.
+2. **Borders of my cards sometimes get cut off when printed.**: 
+    Postcards are produced in large sheets and then cut to size. This process is computer-controlled and very accurate, but working in the physical realm requires planning for tolerance. As such, it's important to include some extra space ("bleed area") in your images, to ensure that all postcards look good when produced. That means making your borders slightly larger (1/10") than they'd appear on screen and not putting any important elements (text, etc) very near the edges.
+
 ## Pricing
 
 All payments are handled from within the ui. You won't need to collect payment from your users or set up SSL certificates, and we will pay you a percentage of the revenues based on what you charge your users. The base price is $0.99 for US-bound prints, and $1.99 for prints sent anywhere else. You will get 70% of the revenues of anything you charge above that; so if you choose to charge $2.99 us and $3.99 international, you'll make $1.40 per us card ($2.99 - $0.99 = $2.00 * 0.70). We pay by check or PayPal once your revenue hits $25.
