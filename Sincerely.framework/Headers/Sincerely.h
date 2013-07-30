@@ -7,8 +7,8 @@
 //
 
 /******************
- * Version: 1.3   *
- * Date: 05/12/13 *
+ * Version: 1.4   *
+ * Date: 7/29/13 *
  ******************/
 
 #import <Sincerely/SincerelyConstants.h>

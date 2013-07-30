@@ -1,9 +1,17 @@
 ShipLib iOS Framework
 =====================
 
-Current version: 1.3
+Current version: 1.4 [download](https://github.com/sincerely/shiplib-ios/archive/master.zip)
 
-**Note:** Versions 1.2 and below used UDIDs. Version 1.3+ is fully compatible with Apple's latest requirements with regards to UDIDs.
+**New in this version:**
+
+1. Fixed crashing bug in iPad when dismissing keyboard.
+
+2. Reduced compiled library size by 30%!
+
+3. Minor copy updates
+
+**Note:** Versions 1.2 and below used UDIDs. v1.3 and up are fully compatible with Apple's latest UDID specifications.
 
 The Sincerely Ship Library for iOS makes adding photo postcard mailing functionality to your app as easy as including a library.
 
