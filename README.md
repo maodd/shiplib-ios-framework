@@ -1,4 +1,4 @@
-ShipLib iOS Framework
+ShipLib iOS SDK
 =====================
 
 Current version: 1.4 [download](https://github.com/sincerely/shiplib-ios/archive/master.zip)
@@ -7,15 +7,14 @@ Current version: 1.4 [download](https://github.com/sincerely/shiplib-ios/archive
 
 1. Fixed crashing bug in iPad when dismissing keyboard.
 
-2. Reduced compiled library size by 30%!
+2. Reduced compiled library size by 30%
 
-3. Minor copy updates
 
 **Note:** Versions 1.2 and below used UDIDs. v1.3 and up are fully compatible with Apple's latest UDID specifications.
 
-The Sincerely Ship Library for iOS makes adding photo postcard mailing functionality to your app as easy as including a library.
+The Sincerely Ship SDK for iOS makes it easy to add photo postcard mailing functionality to your app.
 
-Sincerely.framework is a bundle of compiled code and resources ready to include in any iOS application running version 4.0 or higher. By including this framework, you will be able to allow your users to print a photo and send it anywhere in the world, all from inside your application.
+By including this SDK in your project, you will enable your users to mail a postcard to anywhere in the world, all from inside your application.
 
 ## Installation
 
