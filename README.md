@@ -220,6 +220,8 @@ The Sincerely Ship library will only run on devices running iOS 4.0 or later. If
     - Make sure your `Framework Search Paths` includes the directory root where you placed the Sincerely.framework bundle.
 2. **Borders of my cards sometimes get cut off when printed.**: 
     Postcards are produced in large sheets and then cut to size. This process is computer-controlled and very accurate, but working in the physical realm requires planning for tolerance. As such, it's important to include some extra space ("bleed area") in your images, to ensure that all postcards look good when produced. That means making your borders slightly larger (1/10") than they'd appear on screen and not putting any important elements (text, etc) very near the edges.
+3. **Error: Could not load NIB in bundle**:
+    Make sure your "Build Phases" tab on your project's target shows Sincerely.framework under "Copy Bundle Resources" 
 
 ## Pricing
 
