@@ -200,31 +200,6 @@ NSDictionary *address2 = [NSDictionary dictionaryWithObjectsAndKeys:@"Matt Brezi
 controller.recipients = [NSArray arrayWithObjects:address1, address2, nil];
 ````
 
-## Supporting iOS version 3.x
-
-The Sincerely Ship library will only run on devices running iOS 4.0 or later. If your application currently supports 3.x, there are a few steps you must follow in order to ensure that your 3.x support stays intact.
-
-1. Weak link against UIKit:
-    - Open the "Build Phases" tab of the iOS target running the library.
-    - Expand the "Link Binary With Libraries" section to find the row containing UIKit.
-    - Make sure the drop down on the right side of the UIKit row is set to optional.
-2. Weak link against libSystem.B.dylib (Objective-C Blocks)
-    - Open the "Build Settings" tab of the iOS target running the library.
-    - Find the row for "Other Linker Flags"
-    - Under all configurations add "-weak_library /usr/lib/libSystem.B.dylib"
-3. Make sure that your entrance point to the Ship library does not run on 3.x devices. Here is some example code that only adds a button to the view if the device is running 4.0 or later.
-    ````objective-c
-    NSString *version = [[UIDevice currentDevice] systemVersion];
-    
-    if ([version compare:@"4.0" options:NSNumericSearch] != NSOrderedAscending) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        
-        // Configure button for title, action, position, etc.
-        
-        [self.view addSubview:button];
-    }
-    ````
-
 ## Troubleshooting
 
 1. **ShipLib/Sincerely.h file not found**:
