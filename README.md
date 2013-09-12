@@ -53,7 +53,7 @@ There are three files included with the framework.
 
 | File          | Description   |
 | :------------ | :------------ |
-|**Sincerely.h**| The main import file i.e. `#import <Sincerely/Sincerely.h>` |
+|**Sincerely.h**| The main import file i.e. `#import <ShipLib/Sincerely.h>` |
 |**SincerelyConstants.h**| Constants used in the framework |
 |**SYSincerelyController.h**| The controller you will need to initiate and present |
 
@@ -227,13 +227,15 @@ The Sincerely Ship library will only run on devices running iOS 4.0 or later. If
 
 ## Troubleshooting
 
-1. **Sincerely/Sincerely.h file not found**:
-    - If you've recently upgraded and the path to Sincrely.framework changed, make sure that you completely removed the old framework. Sometimes Xcode will keep around directories inside the search paths of your project, which can cause this error.
-    - Make sure your `Framework Search Paths` includes the directory root where you placed the Sincerely.framework bundle.
+1. **ShipLib/Sincerely.h file not found**:
+    - If you've recently upgraded and the path to ShipLib.framework changed, make sure that you completely removed the old framework. Sometimes Xcode will keep around directories inside the search paths of your project, which can cause this error.
+    - Make sure your `Framework Search Paths` includes the directory root where you placed the ShipLib folder.
+    - Ensure that `-ObjC` appears as one of your `Other Linker Flags` in the Build Settings of your Target.
 2. **Borders of my cards sometimes get cut off when printed.**: 
     Postcards are produced in large sheets and then cut to size. This process is computer-controlled and very accurate, but working in the physical realm requires planning for tolerance. As such, it's important to include some extra space ("bleed area") in your images, to ensure that all postcards look good when produced. That means making your borders slightly larger (1/10") than they'd appear on screen and not putting any important elements (text, etc) very near the edges.
 3. **Error: Could not load NIB in bundle**:
-    Make sure your "Build Phases" tab on your project's target shows Sincerely.framework under "Copy Bundle Resources" 
+    - Make sure your "Build Phases" tab on your project's target shows ShipLib.framework under "Link Binary With Libraries" 
+    - Ensure that `-ObjC` appears as one of your `Other Linker Flags` in the Build Settings of your Target.
 
 ## Pricing
 
