@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
     :tag => s.version.to_s
   } 
   s.frameworks = 'AddressBook', 'AddressBookUI', 'SystemConfiguration'
-  s.ios.vendored_frameworks = 'Sincerely.framework'
+  s.ios.vendored_frameworks = 'ShipLib.framework'
   s.preserve_paths = 'ShipLib/ShipLib.framework'
 end
