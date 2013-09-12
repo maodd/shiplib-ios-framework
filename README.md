@@ -9,6 +9,7 @@ The Sincerely Ship SDK for iOS makes it easy to add photo postcard mailing funct
 
 1. Fixed bug preventing validation and release
 2. Fixed iOS 7 styling issues
+3. **Updating from a previous version?** We've renamed some files and cleaned up the project. Please remove and re-add this new project according to the directions below.
 
 ## Installation
 
