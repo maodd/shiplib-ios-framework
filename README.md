@@ -12,7 +12,7 @@ The Sincerely Ship SDK for iOS makes it easy to add photo postcard mailing funct
 
 ## Installation
 
-Installing Sincerely.framework is a quick and easy process.  This may be done manually or via Cocoapods.
+Installing ShipLib.framework is a quick and easy process.  This may be done manually or via Cocoapods.
 
 ## Installing via Cocoapods
 
@@ -26,7 +26,7 @@ pod 'ShipLib', :git => 'https://github.com/sincerely/shiplib-ios-framework.git'
 
 ## Manual Installation
 
-1. Drag and drop the Sincerely.framework folder into your project folder.
+1. Drag and drop the `ShipLib` folder into your project folder.
 
 2. Open the "Build Phases" tab of the iOS target you would like to include the library in.
 
@@ -42,7 +42,10 @@ pod 'ShipLib', :git => 'https://github.com/sincerely/shiplib-ios-framework.git'
 
     ![Other frameworks](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_4.png)
 
-6. That's it. You are now ready to integrate! Please report any issues you run into: https://github.com/sincerely/shiplib-ios-framework/issues
+6. That's it. You are now ready to integrate! 
+
+Please report any issues here: https://github.com/sincerely/shiplib-ios-framework/issues
+
 
 ## Integration
 
