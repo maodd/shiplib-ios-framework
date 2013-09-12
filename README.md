@@ -1,15 +1,14 @@
 ShipLib iOS SDK
 =====================
 
-The Sincerely Ship SDK for iOS makes it easy to add photo postcard mailing functionality to your app. By including it in your project, your users will be able to mail a real postcard anywhere in the world at a price you set. It's designed to be turn-key: Simply pass the SDK an image, and it handles addressing & billing for you in a modal.
+The Sincerely Ship SDK for iOS makes it easy to add photo postcard mailing functionality to your app. By including it in your project, your users will be able to mail a real postcard anywhere in the world at a price you set. It's completely turn-key: Simply pass an image, and it handles addressing & billing for you in a modal.
 
-**Current version:** 1.5 [(download)](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip)
+**Current version:** 1.6 [(download)](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip)
 
 **New in this version:**
 
 1. Fixed bug preventing validation and release
-2. Fixed some styling issues with iOS 7
-3. This release is compatible with iOS 7, however, some styling has not yet been upgraded (coming soon)
+2. Fixed iOS 7 styling issues
 
 ## Installation
 
@@ -23,7 +22,7 @@ pod 'ShipLib', :git => 'https://github.com/sincerely/shiplib-ios-framework.git'
 
 2. Select the "Build Phases" tab from your main target settings. Expand the "Copy Bundle Resources" section
 
-3. In the Pods project, expand the Pods/ShipLib/ directory. Drag "Sincerely.framework" to the "Copy bundle Resources" section
+3. In the Pods project, expand the Pods/ShipLib/ directory. Drag "ShipLib.framework" to the "Copy bundle Resources" section
 
 ## Manual Installation
 
@@ -33,19 +32,17 @@ pod 'ShipLib', :git => 'https://github.com/sincerely/shiplib-ios-framework.git'
 
     ![Getting to Build Phases](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_1.png)
 
-3. Under the "Link Binary With Libraries" section, hit the plus button. Then select "Add Other…", navigate to where you moved the Sincerely.framework folder and select the the folder named "Sincerely.framework". It should now appear in that list.
+3. Under the "Link Binary With Libraries" section, hit the plus button. Then select "Add Other…", navigate to where you moved the ShipLib folder and select the the folder named "ShipLib". Be sure to check the box that says "Copy items into destination group" and check the box next to your app's target.
 
     ![Adding frameworks](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_2.png)
 
-4. The Sincerely.framework folder should now be in the Xcode file list on the left side. Drag and drop Sincerely.framework from the file list in the left panel of Xcode into the "Copy Bundle Resources" section.
+4. Click on your Project, then select your Target. In the Build Settings tab, add `-ObjC` to `Other Linker Flags` to ensure that your target links all the files from the library.
 
-    ![Bundle Resources](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_3.png)
-
-5. Under the "Link Binary With Libraries" section, hit the plus button. Add: **AddressBook.framework**, **AddressBookUI.framework**, **SystemConfiguration.framework**, and **CoreTelephony.framework**
+5. In the Build Phases tab, under the "Link Binary With Libraries" section, hit the add button and add: **AddressBook.framework**, **AddressBookUI.framework**, **SystemConfiguration.framework**
 
     ![Other frameworks](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_4.png)
 
-6. That's it. You are now ready to integrate!
+6. That's it. You are now ready to integrate! Please report any issues you run into: https://github.com/sincerely/shiplib-ios-framework/issues
 
 ## Integration
 
