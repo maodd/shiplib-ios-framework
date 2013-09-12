@@ -10,5 +10,5 @@
 //  Version 1.6
 //  Updated: 9/11/13
 
-#import <Sincerely/SincerelyConstants.h>
-#import <Sincerely/SYSincerelyController.h>
+#import <ShipLib/SincerelyConstants.h>
+#import <ShipLib/SYSincerelyController.h>
