@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.source = {
     :git => 'https://github.com/sincerely/shiplib-ios-framework.git',
     :tag => s.version.to_s
-  } 
+  }
   s.frameworks = 'AddressBook', 'AddressBookUI', 'SystemConfiguration'
   s.ios.vendored_frameworks = 'ShipLib/ShipLib.framework'
-  s.preserve_paths = 'ShipLib/*.framework'
+  s.preserve_paths = 'ShipLib'
 end
