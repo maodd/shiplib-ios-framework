@@ -3,13 +3,14 @@ ShipLib iOS SDK
 
 The Sincerely Ship SDK for iOS makes it easy to add photo postcard mailing functionality to your app. By including it in your project, your users will be able to mail a real postcard anywhere in the world at a price you set. It's completely turn-key: Simply pass an image, and it handles addressing & billing for you in a modal.
 
-**Current version:** 1.6 [(download)](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip)
+**Current version:** 1.6.1 [(download)](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip)
 
 **New in this version:**
 
-1. Fixed bug preventing validation and release
-2. Fixed iOS 7 styling issues
-3. **Updating from a previous version?** We've renamed some files and cleaned up the project. Please remove and re-add this new project according to the directions below.
+1. Fixed bug preventing validation and release for iOS 7
+2. Fixed bug with signup flow
+3. Fixed iOS 7 styling issues
+4. **Updating from a previous version?** We've renamed some files and cleaned up the project a bit. Please see upgrading from 1.5.
 
 ## Installation
 
@@ -47,6 +48,11 @@ pod 'ShipLib', :git => 'https://github.com/sincerely/shiplib-ios-framework.git'
 
 Please report any issues here: https://github.com/sincerely/shiplib-ios-framework/issues
 
+## Upgrading from 1.5 and below
+
+- Remove Sincerely.framework and associated resources
+- Drag the entire ShipLib directory, including the Resources and the framework to Xcode. Make sure you add the new files to your Target.
+- Change `#import <Sincerely/Sincerely.h>` to `#import <ShipLib/ShipLib.h>`
 
 ## Integration
 
