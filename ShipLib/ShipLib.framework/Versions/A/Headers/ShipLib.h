@@ -1,5 +1,5 @@
 //
-//  Sincerely.h
+//  ShipLib.h
 //  Sincerely
 //
 //  Created by Sincerely on 7/5/11.
