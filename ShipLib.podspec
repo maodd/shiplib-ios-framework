@@ -13,4 +13,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'AddressBook', 'AddressBookUI', 'SystemConfiguration'
   s.ios.vendored_frameworks = 'ShipLib/ShipLib.framework'
   s.preserve_paths = 'ShipLib'
+  s.resources = 'Resources/*.png', 'Resources/*.nib'
 end
