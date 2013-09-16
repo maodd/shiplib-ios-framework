@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SincerelyConstants.h"
+#import "SYConstants.h"
 
 extern NSString *const SYSincerelyErrorDomain;
 
@@ -17,7 +17,7 @@ extern NSString *const SYSincerelyErrorDomain;
     
 }
 
-@property (nonatomic, assign) id <SYSincerelyControllerDelegate> sincerelyDelegate;
+@property (nonatomic, weak) id <SYSincerelyControllerDelegate> sincerelyDelegate;
 
 /*
  * If you would like to skip the crop screen, set this value to YES.
@@ -42,7 +42,7 @@ extern NSString *const SYSincerelyErrorDomain;
  * Setting this value will pre-populate the selected profile photo.
  */
 
-@property (nonatomic, retain) UIImage *profilePhoto;
+@property (nonatomic, strong) UIImage *profilePhoto;
 
 /*
  * Setting this value will pre-select the recipients in the array.
@@ -62,13 +62,13 @@ extern NSString *const SYSincerelyErrorDomain;
  * Alternatively, for US based addresses, you can submit just name, city, and zipcode and we will fill out the remaining fields for you.
  */
 
-@property (nonatomic, retain) NSArray *recipients;
+@property (nonatomic, strong) NSArray *recipients;
 
 /*
  * Use this method to create a SYSincerelyController that you can use to display modally.
  * 
  * @param images - An NSArray object that must only contain UIImage objects. If any other objects are present in the array, this initializer will return nil.
- * @param productType - A product type as defined in SYSincerelyConstants.h
+ * @param productType - A product type as defined in SYConstants.h
  * @param applicationKey - Your application key designated for this app from http://dev.sincerely.com
  * @param delegate - The object to receive delegate callbacks.
  *
