@@ -1,16 +1,19 @@
 ShipLib iOS SDK
 =====================
 
-The Sincerely Ship SDK for iOS makes it easy to add photo postcard mailing functionality to your app. By including it in your project, your users will be able to mail a real postcard anywhere in the world at a price you set. It's completely turn-key: Simply pass an image, and it handles addressing & billing for you in a modal.
+The Sincerely Ship SDK for iOS makes it easy to add postcard mailing functionality to your iOS app. By including it in your project, your users will be able to mail a real postcard anywhere in the world at a price you set. It's completely turn-key: Simply pass in an image, and it handles addressing & billing for you in a modal.
 
-**Current version:** 1.6.3 [(download)](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip)
+**Current version:** 1.7 [(download)](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip)
 
 **New in this version:**
 
-1. Fixed bug preventing validation and release for iOS 7
-2. Fixed bug with signup flow
-3. Fixed iOS 7 styling issues
-4. **Updating from a previous version?** We've renamed some files and cleaned up the project a bit. Please see upgrading from 1.5.
+* New resources bundle
+* New ARC-ification
+* Fixed bug preventing validation and release for iOS 7
+* Fixed bug with signup flow
+* Fixed iOS 7 styling issues
+
+**Updating from a previous version?** We've renamed some files. Please see "Upgrading from 1.5" below.
 
 ## Installation
 
@@ -22,36 +25,24 @@ Installing ShipLib.framework is a quick and easy process.  This may be done manu
 
 pod 'ShipLib', :git => 'https://github.com/sincerely/shiplib-ios-framework.git'
 
-2. Select the "Build Phases" tab from your main target settings. Expand the "Copy Bundle Resources" section
-
-3. In the Pods project, expand the Pods/ShipLib/ directory. Drag "ShipLib.framework" to the "Copy bundle Resources" section
-
 ## Manual Installation
 
-1. Drag and drop the `ShipLib` folder into your project folder.
+1. [Download the repo](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip) from github
 
-2. Open the "Build Phases" tab of the iOS target you would like to include the library in.
+2. Drag `ShipLibResources.bundle` and `ShipLib.framework` to your project.
 
-    ![Getting to Build Phases](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_1.png)
-
-3. Under the "Link Binary With Libraries" section, hit the plus button. Then select "Add Other…", navigate to where you moved the ShipLib folder and select the the folder named "ShipLib". Be sure to check the box that says "Copy items into destination group" and check the box next to your app's target.
-
-    ![Adding frameworks](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_2.png)
-
-4. Click on your Project, then select your Target. In the Build Settings tab, add `-ObjC` to `Other Linker Flags` to ensure that your target links all the files from the library.
-
-5. In the Build Phases tab, under the "Link Binary With Libraries" section, hit the add button and add: **AddressBook.framework**, **AddressBookUI.framework**, **SystemConfiguration.framework**
+3. In the Build Phases tab of your app's Target, under the "Link Binary With Libraries" section, hit the add button and add: **AddressBook.framework**, **AddressBookUI.framework**, **SystemConfiguration.framework**
 
     ![Other frameworks](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_4.png)
 
-6. That's it. You are now ready to integrate! 
+4. That's it. You are now ready to integrate! 
 
 Please report any issues here: https://github.com/sincerely/shiplib-ios-framework/issues
 
 ## Upgrading from 1.5 and below
 
 - Remove Sincerely.framework and associated resources
-- Drag the entire ShipLib directory, including the Resources and the framework to Xcode. Make sure you add the new files to your Target.
+- Drag `ShipLibResources.bundle` and `ShipLib.framework` to your project. Make sure you add the new files to your app's Target.
 - Change `#import <Sincerely/Sincerely.h>` to `#import <ShipLib/ShipLib.h>`
 
 ## Integration
