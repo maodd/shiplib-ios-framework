@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   }
   s.frameworks = 'AddressBook', 'AddressBookUI', 'SystemConfiguration'
   s.ios.vendored_frameworks = 'ShipLib/ShipLib.framework'
-  s.resources = 'ShipLib/Resources/*'
+  s.resources = 'ShipLibResources.bundle'
 end
