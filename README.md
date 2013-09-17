@@ -36,8 +36,6 @@ Run `pod install`
 
 3. In the Build Phases tab of your app's Target, under the "Link Binary With Libraries" section, hit the add button and add: **AddressBook.framework**, **AddressBookUI.framework**, **SystemConfiguration.framework**
 
-    ![Other frameworks](https://s3.amazonaws.com/sincerely-assets/shiplib-docs/install_4.png)
-
 4. That's it. You are now ready to integrate! 
 
 Please report any issues here: https://github.com/sincerely/shiplib-ios-framework/issues
