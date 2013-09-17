@@ -24,7 +24,7 @@ Installing ShipLib.framework is a quick and easy process.  This may be done manu
 
 Add the following to your Podfile: 
 
-pod 'ShipLib', :git => 'https://github.com/sincerely/shiplib-ios-framework.git'
+pod 'ShipLib'
 
 Run `pod install`
 
