@@ -20,15 +20,19 @@ The Sincerely Ship SDK for iOS makes it easy to add postcard mailing functionali
 
 Installing ShipLib.framework is a quick and easy process.  This may be done manually or via [cocoapods](http://cocoapods.org/).
 
-## Installing via Cocoapods (recommended)
+### Installing via Cocoapods (recommended)
 
 Add the following to your Podfile: 
 
+````
 pod 'ShipLib'
+````
 
 Run `pod install`
 
-## Manual Installation
+You're all set! See 'Integration' for steps to integrate into your app.
+
+### Manual Installation
 
 1. [Download the repo](https://github.com/sincerely/shiplib-ios-framework/archive/master.zip) from github
 
@@ -40,7 +44,7 @@ Run `pod install`
 
 Please report any issues here: https://github.com/sincerely/shiplib-ios-framework/issues
 
-## Upgrading from 1.5 and below
+### Upgrading from 1.5 and below
 
 - Remove Sincerely.framework and associated resources
 - Drag `ShipLibResources.bundle` and `ShipLib.framework` to your project. Make sure you add the new files to your app's Target.
@@ -48,22 +52,28 @@ Please report any issues here: https://github.com/sincerely/shiplib-ios-framewor
 
 ## Integration
 
+Integrating ShipLib into your app is straightforward and easy. If you're stuck or need a starting point, check out our [sample app](https://github.com/sincerely/widget-postcards-ios).
+
 There are three files included with the framework.
 
 | File          | Description   |
 | :------------ | :------------ |
-|**Sincerely.h**| The main import file i.e. `#import <ShipLib/ShipLib.h>` |
-|**SincerelyConstants.h**| Constants used in the framework |
+|**ShipLib.h**| The file you include in your project i.e. `#import <ShipLib/ShipLib.h>` |
+|**SYConstants.h**| Constants used in the framework |
 |**SYSincerelyController.h**| The controller you will need to initiate and present |
 
-1. Prepare a place to launch the SYSincerelyController. As an example, a selector for when a UIButton is touched.
-2. Create a SYSincerelyController. Check if one was created (init did not return nil) and then present it modally. You will need to pass it an array, a product type, and an object to act as its delegate `(id <SYSincerelyControllerDelegate>)`
+1. Choose where your users will launch the ShipLib modal. An example might be a selector for a UIButton touch. Inside the header file for this controller, add `#import <ShipLib/ShipLib.h>` and implement the `SYSincerelyControllerDelegate` protocol like so:
+    ````objective-c
+    @interface ViewController : UIViewController <SYSincerelyControllerDelegate> {
+    }
+    ````
+2. Create a SYSincerelyController (example below). Check if one was created (init did not return nil) and then present it modally.
     - Image array: An NSArray containing *only* UIImage objects. The number of UIImage objects in the array must be the amount as required by the product type.
     - Product Type: Currently, you can only pass in the product type SYProductTypePostcard. This type requires the images array to contain one and only one UIImage.
-    - Application Key: An application key generated from http://dev.sincerely.com/apps 
-    - Delegate: Any object that conforms to the `SYSincerelyControllerDelegate` protocol.
+    - Application Key: The application key generated from the [Developer Portal](http://dev.sincerely.com/apps)
+    - Delegate: Any object that conforms to the `SYSincerelyControllerDelegate` protocol (usually `self`)
 
-    **Note:** The final image that will be sent to be printed will be 1838 x 1238 (6 inches x 4 inches with margin). The library will automatically scale down images larger than this, and offers cropping functionality. More Information
+    The final image that will be sent to be printed will be 1838 x 1238 (6 inches x 4 inches with margin). The library will automatically scale down images larger than this, and offers cropping functionality.
 
     ````objective-c
     SYSincerelyController *controller = [[SYSincerelyController alloc] initWithImages:[NSArray arrayWithObject:[UIImage imageNamed:@"demo_image.jpg"]]
@@ -77,9 +87,9 @@ There are three files included with the framework.
     }
     ````
 
-  The biggest takeaway here is to remember that initWithImages:product:applicationKey:delegate: can return nil if the correct inputs are not given. If you then call presentViewController:animated:competion: and pass in nil, your application *will crash*.
+    **Note:** `initWithImages:product:applicationKey:delegate:` *will* return nil if the correct inputs are not given. If you then call `presentViewController:animated:competion:` and pass in nil, your application *will crash*.
 
-3. Implement the SYSincerelyControllerDelegate protocol so that you can receive callbacks. Here are some example implementations:
+3. Implement the `SYSincerelyControllerDelegate` protocol to receive callbacks. Here are some sample implementations:
 
     ````objective-c
     - (void)sincerelyControllerDidFinish:(SYSincerelyController *)controller {
@@ -107,11 +117,11 @@ There are three files included with the framework.
     } 
     ````
 
-4. That's it! Please let us know any thoughts, questions, or feedback that you have.
+4. That's it! Please send us any thoughts, questions, or feedback that you have.
 
 ## Customization
 
-Customizing the experience to fit your application is something you should place close attention to as you integrate the Sincerely Ship Library. The `SYSincerelyController` supports a list of properties, which you can modify to tailor the experience to your application. The properties are as follows:
+Customizing the experience to fit your application is something you should place close attention to as you integrate ShipLib. The `SYSincerelyController` supports a list of properties, which you can modify to tailor the experience to your application. The properties are as follows:
 
 ### shouldSkipCrop
 A boolean value that indicates whether the crop screen should be skipped. Default value: NO
@@ -199,27 +209,35 @@ NSDictionary *address2 = [NSDictionary dictionaryWithObjectsAndKeys:@"Matt Brezi
 controller.recipients = [NSArray arrayWithObjects:address1, address2, nil];
 ````
 
-## Troubleshooting
+## Install Troubleshooting
+
+Solving most problems involves the usual Xcode voodoo. That is, clear out your Derived Data folder, Clean your project, restart Xcode. iOS Frameworks still aren't "officially" supported in Xcode, hence the bumpy road sometimes working with them!
+
+### CocoaPods
+
+- Try removing the `ShipLib` folder inside the `Pods` directory inside your project: `rm -Rf ShipLib/Pods` and running `pod install` to reinstall the latest version.
+
+### Manual Install
 
 1. **ShipLib/ShipLib.h file not found**:
     - If you've recently upgraded and the path to ShipLib.framework changed, make sure that you completely removed the old framework. Sometimes Xcode will keep around directories inside the search paths of your project, which can cause this error.
     - Make sure your `Framework Search Paths` includes the directory root where you placed the ShipLib folder.
-    - Ensure that `-ObjC` appears as one of your `Other Linker Flags` in the Build Settings of your Target.
+    - Ensure that `-ObjC` and `-all_load` are added to `Other Linker Flags` in the Build Settings of your Target (shouldn't be required in versions 1.7 and up!)
 2. **Borders of my cards sometimes get cut off when printed.**: 
-    Postcards are produced in large sheets and then cut to size. This process is computer-controlled and very accurate, but working in the physical realm requires planning for tolerance. As such, it's important to include some extra space ("bleed area") in your images, to ensure that all postcards look good when produced. That means making your borders slightly larger (1/10") than they'd appear on screen and not putting any important elements (text, etc) very near the edges.
+    Postcards are produced in large sheets and then cut to size. This process is computer-controlled and very accurate, but working in the physical realm requires planning for tolerance. As such, it's important to include some extra space (our industry calls this "bleed area") in your images, to ensure that all postcards look good when produced. That means making your borders slightly larger (1/10") than they'd appear on screen and not putting any important elements (text, etc) very near the edges.
 3. **Error: Could not load NIB in bundle**:
     - Make sure your "Build Phases" tab on your project's target shows ShipLib.framework under "Link Binary With Libraries" 
-    - Ensure that `-ObjC` and `-all_load` are added to `Other Linker Flags` in the Build Settings of your Target.
+    - Ensure that `-ObjC` and `-all_load` are added to `Other Linker Flags` in the Build Settings of your Target (shouldn't be required in versions 1.7 and up!)
 
 ## Pricing
 
 All payments are handled from within the ui. You won't need to collect payment from your users or set up SSL certificates, and we will pay you a percentage of the revenues based on what you charge your users. The base price is $0.99 for US-bound prints, and $1.99 for prints sent anywhere else. You will get 70% of the revenues of anything you charge above that; so if you choose to charge $2.99 us and $3.99 international, you'll make $1.40 per us card ($2.99 - $0.99 = $2.00 * 0.70). We pay by check or PayPal once your revenue hits $25.
 
-## Support
+## Need Support?
 
-If you have any problems at all getting this up and running, contact us at [devsupport@sincerely.com](mailto:devsupport@sincerely.com).
+If you have any problems at all getting this up and running, feel free to open an issue [here](https://github.com/sincerely/shiplib-ios-framework/issues) or contact us at [devsupport@sincerely.com](mailto:devsupport@sincerely.com).
 
-## Reporting bugs
+## Found a bug?
 
 You may report any issues with the framework or documentation [here](https://github.com/sincerely/shiplib-ios-framework/issues).
 
