@@ -209,6 +209,10 @@ NSDictionary *address2 = [NSDictionary dictionaryWithObjectsAndKeys:@"Matt Brezi
 controller.recipients = [NSArray arrayWithObjects:address1, address2, nil];
 ````
 
+## UIActivityView Support
+
+[jeremybrooks](https://github.com/jeremybrooks) put together [PostcardUIActivity](https://github.com/jeremybrooks/PostcardUIActivity) to present the ShipLib from a UIActivity. It's a great option if you have a variety of actions you wish to offer to your users when they click on a photo.
+
 ## Install Troubleshooting
 
 Solving most problems involves the usual Xcode voodoo. That is, clear out your Derived Data folder, Clean your project, restart Xcode. iOS Frameworks still aren't "officially" supported in Xcode, hence the bumpy road sometimes working with them!
