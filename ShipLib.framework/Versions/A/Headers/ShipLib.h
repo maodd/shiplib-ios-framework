@@ -8,7 +8,7 @@
 //  Documentation: https://github.com/sincerely/shiplib-ios-framework
 //
 
-#define kSHIPLIB_VERSION @"1.7.1"
+#define kSHIPLIB_VERSION @"1.7.2"
 
 #import <ShipLib/SYConstants.h>
 #import <ShipLib/SYSincerelyController.h>
