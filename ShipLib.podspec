@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name  = 'ShipLib'
-  s.version = '1.7.4'
+  s.version = '1.7.5'
   s.platform = :ios
   s.summary = 'Allow users to send printed photos from your app.'
   s.author = { 'Sincerely' => 'devsupport@sincerely.com' }
